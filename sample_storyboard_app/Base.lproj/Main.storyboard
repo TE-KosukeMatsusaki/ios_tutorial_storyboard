@@ -12,12 +12,14 @@
         <!--Navigation Controller-->
         <scene sceneID="duk-b6-xiz">
             <objects>
-                <navigationController id="Eom-8d-YYJ" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" toolbarHidden="NO" id="Eom-8d-YYJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="B98-6y-Kh6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Cf-v8-ZCi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NNd-Qo-Hbg">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -31,7 +33,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="ViewController" customModule="sample_storyboard_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="SecondViewController" customModule="sample_storyboard_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +74,9 @@
                                         <state key="normal" title="Secondへ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="i6s-hl-osd" kind="push" id="RQH-4l-Pto"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -95,7 +100,9 @@
                             <constraint firstItem="MOl-Si-lke" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zJ5-11-m0f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mHN-VX-YLb"/>
+                    <navigationItem key="navigationItem" title="main" id="mHN-VX-YLb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qdS-V4-tsf"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +111,7 @@
         <!--First View Controller-->
         <scene sceneID="kGh-vR-9sz">
             <objects>
-                <viewController id="rR6-wu-USe" userLabel="First View Controller" customClass="ViewController" customModule="sample_storyboard_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rR6-wu-USe" userLabel="First View Controller" customClass="SecondViewController" customModule="sample_storyboard_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ffr-Nl-PZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +162,9 @@
                             <constraint firstItem="fIc-qC-t5u" firstAttribute="leading" secondItem="aNp-4a-Kwg" secondAttribute="leading" id="rCv-ez-Aff"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2SV-3x-noN"/>
+                    <navigationItem key="navigationItem" title="first" id="2SV-3x-noN">
+                        <barButtonItem key="backBarButtonItem" title=" " id="KRc-N6-MRA"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ7-Qg-L3J" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +173,7 @@
         <!--Second View Controller-->
         <scene sceneID="rBm-VD-hRc">
             <objects>
-                <viewController id="i6s-hl-osd" userLabel="Second View Controller" sceneMemberID="viewController">
+                <viewController id="i6s-hl-osd" userLabel="Second View Controller" customClass="SecondViewController" customModule="sample_storyboard_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pHf-Ck-QAf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,6 +200,10 @@
                                         <state key="normal" title="Mainへ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="bTt-HX-pxa" eventType="touchUpInside" id="m0Q-Ix-YLP"/>
+                                            <segue destination="l7C-xo-tjw" kind="unwind" identifier="backToTop" unwindAction="myUnwindActionFor:towardsViewController:" id="01w-AR-D6u"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -212,13 +225,19 @@
                             <constraint firstItem="Icv-YJ-1N1" firstAttribute="leading" secondItem="SkI-gE-T4d" secondAttribute="leading" id="pRp-b5-mxf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kae-Oc-kd1"/>
+                    <navigationItem key="navigationItem" title="second" id="kae-Oc-kd1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="8K2-5v-U4u"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTt-HX-pxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="l7C-xo-tjw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="94"/>
+            <point key="canvasLocation" x="925" y="829"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BYv-Mf-PoV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

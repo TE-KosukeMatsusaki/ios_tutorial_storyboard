@@ -15,9 +15,10 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func myUnwindAction(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+    }
 
     @IBAction func clickMainButton(_ sender: Any) {
-        NSLog("タップ")
         self.dismiss(animated: true, completion: nil)
     }
 }
