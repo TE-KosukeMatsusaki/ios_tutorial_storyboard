@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction func clickMainButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
